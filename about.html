@@ -23,14 +23,14 @@
       --radius: 20px; --radius-lg: 32px;
     }
     body { font-family: var(--sans); background: var(--warm-bg); color: var(--ink); overflow-x: hidden; line-height: 1.6; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(253,249,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(200,192,232,0.3); padding: 0 2.5rem; height: 110px; display: flex; align-items: center; justify-content: space-between; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(253,249,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(200,192,232,0.3); padding: 0 2.5rem; height: 115px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 130px; width: auto; }
+    .nav-logo img { height: 100px; width: auto; mix-blend-mode: multiply; }
     .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
     .nav-links a { font-weight: 600; font-size: 0.9rem; color: var(--muted); text-decoration: none; padding: 0.5rem 1rem; border-radius: 50px; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--purple); background: var(--lav-light); }
     .nav-cta { background: linear-gradient(135deg, var(--purple), var(--pink)) !important; color: var(--white) !important; font-weight: 700 !important; box-shadow: 0 4px 16px rgba(139,63,188,0.3); border-radius: 50px; }
-    .page-wrap { padding-top: 125px; }
+    .page-wrap { padding-top: 130px; }
     .page-hero { padding: 4rem 2.5rem 3rem; max-width: 1200px; margin: 0 auto; }
     .page-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--purple); margin-bottom: 1rem; }
     .page-label::before { content: ''; display: block; width: 24px; height: 3px; background: linear-gradient(90deg, var(--purple), var(--pink)); border-radius: 2px; }
@@ -48,7 +48,7 @@
     .btn-secondary:hover { border-color: var(--purple); background: var(--lav-light); }
     footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 3.5rem 2.5rem 2rem; margin-top: 4rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .footer-brand img { height: 260px; margin-bottom: 1rem; }
+    .footer-brand img { height: 100px; mix-blend-mode: screen; margin-bottom: 1rem; }
     .footer-brand p { font-size: 0.875rem; line-height: 1.6; max-width: 260px; }
     .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
@@ -94,20 +94,21 @@
         <div>
           <div class="section-label">Our Impact</div>
           <h2 class="section-title">Numbers that <em>matter</em></h2>
-          <p style="color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:2rem;">Every statistic is a person — a family — a life changed.</p>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
-            <div style="text-align:center;"><div style="font-size:2.5rem;font-weight:800;color:var(--purple);font-family:var(--serif);line-height:1;">1,200+</div><div style="font-size:0.8rem;color:var(--muted);font-weight:600;margin-top:0.3rem;">Lives Supported</div></div>
-            <div style="text-align:center;"><div style="font-size:2.5rem;font-weight:800;color:var(--purple);font-family:var(--serif);line-height:1;">15+</div><div style="font-size:0.8rem;color:var(--muted);font-weight:600;margin-top:0.3rem;">Active Programs</div></div>
-            <div style="text-align:center;"><div style="font-size:2.5rem;font-weight:800;color:var(--purple);font-family:var(--serif);line-height:1;">Free</div><div style="font-size:0.8rem;color:var(--muted);font-weight:600;margin-top:0.3rem;">All Services</div></div>
+          <p style="color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:2rem;">Every statistic is a person &mdash; a family &mdash; a life changed.</p>
+          <div style="background:var(--lav-light);border-radius:var(--radius-lg);padding:2rem;text-align:center;border:2px dashed var(--lavender);">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">&#128200;</div>
+            <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--purple);margin-bottom:0.5rem;">Pilot Launching Soon</h3>
+            <p style="font-size:0.9rem;color:var(--muted);max-width:400px;margin:0 auto;line-height:1.7;">R1SE is in its founding stage. As our pilot grows, we&rsquo;ll share real impact data here &mdash; lives reached, boxes delivered, and communities strengthened.</p>
           </div>
+
         </div>
         <div>
           <div class="section-label">Our Values</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">No Judgment</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">Everyone deserves care, regardless of their past.</p></div>
-            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Community First</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">Healing happens in relationship, not isolation.</p></div>
-            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Radical Compassion</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">We meet people where they are, every time.</p></div>
-            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Long-Term Care</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">We stay for the journey, not just the crisis.</p></div>
+            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Crisis to Community</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">No one should leave a hospital alone. We meet people at their lowest and walk with them forward.</p></div>
+            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Evidence-Backed Care</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">Every item and resource we provide is grounded in peer-reviewed research on addiction recovery.</p></div>
+            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Barriers Don't Belong Here</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">All R1SE services are free. Cost should never stand between a person and their recovery.</p></div>
+            <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--purple);"><h4 style="font-size:0.95rem;font-weight:800;margin-bottom:0.3rem;">Students Leading Change</h4><p style="font-size:0.82rem;color:var(--muted);line-height:1.5;">R1SE is powered by young people who believe their generation can reshape how we respond to addiction.</p></div>
           </div>
         </div>
       </div>
