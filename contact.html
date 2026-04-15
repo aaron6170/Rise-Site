@@ -172,12 +172,49 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => obs.observe(el));
 
-    // Submit button feedback
-    document.getElementById('submitBtn').addEventListener('click', function() {
-      this.textContent = '✓ Message Sent!';
-      this.style.background = 'linear-gradient(135deg,#2d7a4f,#22a06b)';
-      this.disabled = true;
-      setTimeout(() => { this.textContent = 'Send Message 💜'; this.style.background = ''; this.disabled = false; }, 4000);
+    // Submit form to Formspree
+    const form = document.querySelector('form[action*="formspree"]');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          submitBtn.textContent = '✓ Message Sent!';
+          submitBtn.style.background = 'linear-gradient(135deg,#2d7a4f,#22a06b)';
+          form.reset();
+          setTimeout(() => {
+            submitBtn.textContent = 'Send Message 💜';
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+          }, 4000);
+        } else {
+          submitBtn.textContent = 'Error — Try Again';
+          submitBtn.style.background = 'linear-gradient(135deg,#c0392b,#e74c3c)';
+          submitBtn.disabled = false;
+          setTimeout(() => {
+            submitBtn.textContent = 'Send Message 💜';
+            submitBtn.style.background = '';
+          }, 4000);
+        }
+      } catch (err) {
+        submitBtn.textContent = 'Error — Try Again';
+        submitBtn.style.background = 'linear-gradient(135deg,#c0392b,#e74c3c)';
+        submitBtn.disabled = false;
+        setTimeout(() => {
+          submitBtn.textContent = 'Send Message 💜';
+          submitBtn.style.background = '';
+        }, 4000);
+      }
     });
 
     // Find Help modal
